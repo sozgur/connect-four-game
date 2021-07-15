@@ -12,24 +12,44 @@
     <link rel="stylesheet" type="text/css" href="connectFour.css" />
   </head>
   <body>
-    <div id="game">
+
+    <div class="container" id="start">
       <h1>CONNECT FOUR</h1>
-      <form id="make-board">
-        <div class="form-row">
-          <div class="form-group col-xs-3">
-            <input type="text" id="width" name="width" placeholder="Width" />
+      <form id="board-form" class="font-weight-bold">          
+          <div class="form-group row">
+           <label for"width" class="col-form-label">Width</label> 
+           <div class="col-sm-4">
+               <input type="number" id="width" max="40" min="5" value="7" />
+           </div>
           </div>
-          <div class="form-group col-xs-3">
-            <input type="text" id="height" placeholder="Height" />
+          
+          <div class="form-group row">
+            <label for"height" class="col-form-label">Height</label>
+            <div class="col-sm-4" >
+              <input type="number" id="height" max="12" min="5" value="6" />
+            </div>   
           </div>
-          <div class="form-group col-xs-3">
-            <button type="submit" class="btn btn-primary mb-2">
+
+          <div class="form-group row">
+            <button type="submit" class="btn btn-dark mb-2">
               Start Game
             </button>
           </div>
-        </div>
+
       </form>
+    </div>
+    <div id="game">
       <table id="board"></table>
+    </div>
+    <div id="end">
+      <div id="winner"></div>
+      <h1>Player 1 won</h1>
+      <a
+        href="index.html"
+        id="restart-button"
+        class="btn btn-dark mb-2"
+        >Play again?</a
+      >
     </div>
 
     <script src="connectFour.js"></script>
