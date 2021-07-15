@@ -1,15 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Test Page</title>
+  <head>
+    <meta charset="utf-8" />
+    <title>Test Page Connect Four</title>
         <!-- include CSS for Jasmine -->
         <link
             rel="stylesheet"
             href="https://unpkg.com/jasmine-core/lib/jasmine-core/jasmine.css"
         />
-    </head>
-    <body>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="connectFour.css" />
+  </head>
+  <body>
+<div>
+    <div class="container" id="start">
+      <h1>CONNECT FOUR</h1>
+      <form id="board-form" class="font-weight-bold">          
+          <div class="form-group row">
+           <label for"width" class="col-form-label">Width</label> 
+           <div class="col-sm-4">
+               <input type="number" id="width" max="40" min="5" value="7" />
+           </div>
+          </div>
+          
+          <div class="form-group row">
+            <label for"height" class="col-form-label">Height</label>
+            <div class="col-sm-4" >
+              <input type="number" id="height" max="12" min="5" value="6" />
+            </div>   
+          </div>
+
+          <div class="form-group row">
+            <button type="submit" class="btn btn-dark mb-2">
+              Start Game
+            </button>
+          </div>
+
+      </form>
+    </div>
+    <div id="game">
+      <table id="board"></table>
+    </div>
+    <div id="end">
+      <div id="winner"></div>
+      <h1>Player 1 won</h1>
+      <a
+        href="index.html"
+        id="restart-button"
+        class="btn btn-dark mb-2"
+        >Play again?</a
+      >
+    </div>
+    </div>
+    <div class="test">
         <!-- include JS for Jasmine -->
         <script src="https://unpkg.com/jasmine-core/lib/jasmine-core/jasmine.js"></script>
         <script src="https://unpkg.com/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
@@ -18,5 +66,7 @@
         <!-- include your JS & test file -->
         <script src="connectFour.js"></script>
         <script src="connectFour.test.js"></script>
-    </body>
+    </div>
+  </body>
 </html>
+

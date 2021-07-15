@@ -4,11 +4,11 @@
  * column until a player gets four-in-a-row (horiz, vert, or diag) or until
  * board fills (tie)
  */
-const inputWidth = document.getElementById("width");
-const inputHeight = document.getElementById("height");
-const boardForm = document.getElementById("board-form");
-const start = document.getElementById("start");
-const end = document.getElementById("end");
+let inputWidth = document.getElementById("width");
+let inputHeight = document.getElementById("height");
+let boardForm = document.getElementById("board-form");
+let start = document.getElementById("start");
+let end = document.getElementById("end");
 
 let boardWidth;
 let boardHeight;
