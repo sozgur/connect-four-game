@@ -10,7 +10,7 @@ body {
 }
 
 #start.playing {
-  margin-top: -90vh;
+  margin-top: -40%;
   transition: margin-top 1s;
 }
 
