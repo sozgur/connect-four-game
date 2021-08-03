@@ -47,10 +47,11 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  animation: 0.1s linear running slidein;
+  transition: 250ms transform cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  /* animation: 0.1s linear running slidein; */
 }
 
-@keyframes slidein {
+/* @keyframes slidein {
   from {
     margin-top: 0%;
     transform: translateY(-500px);
@@ -59,7 +60,7 @@ body {
   to {
     margin-top: 100%;
   }
-}
+} */
 
 /* make pieces red/gold, depending on player 1/2 piece */
 .p1 {

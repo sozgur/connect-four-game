@@ -15,6 +15,9 @@ let boardHeight;
 let currPlayer = 1; // active player: 1 or 2
 const board = []; // array of rows, each row is array of cells  (board[y][x])
 
+// you would normally derive this programmatically but using constant here for simplicity
+const pieceHeight = 47;
+
 // Start game
 boardForm.addEventListener("submit", startGame);
 
@@ -91,13 +94,21 @@ function findSpotForCol(x) {
 
 /** placeInTable: update DOM to place piece into HTML table of board */
 function placeInTable(y, x) {
+  // calculate offset height
+  const offsetHeight = ((boardHeight + 1) - (boardHeight - y)) * pieceHeight;
   // make a div and insert into correct table cell
   const cellID = `${y}-${x}`;
   const cell = document.getElementById(cellID);
   const piece = document.createElement("div");
   piece.classList.add("piece");
   piece.classList.add(`p${currPlayer}`);
+  piece.style.transform = `translateY(-${offsetHeight}px)`;
   cell.append(piece);
+  // on the next tick, reset transform
+  // this needs to happen because the piece should be rendered on the screen first *then* removal of transform will activate the transition
+  setTimeout(() => {
+    piece.style.removeProperty('transform');
+  }, 0)
 }
 
 /** endGame: announce game end */
