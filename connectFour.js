@@ -95,7 +95,8 @@ function findSpotForCol(x) {
 /** placeInTable: update DOM to place piece into HTML table of board */
 function placeInTable(y, x) {
   // calculate offset height
-  const offsetHeight = ((boardHeight + 1) - (boardHeight - y)) * pieceHeight;
+  const offsetHeight = (boardHeight + 1 - (boardHeight - y)) * pieceHeight;
+  console.log(offsetHeight, boardHeight, y);
   // make a div and insert into correct table cell
   const cellID = `${y}-${x}`;
   const cell = document.getElementById(cellID);
@@ -107,8 +108,8 @@ function placeInTable(y, x) {
   // on the next tick, reset transform
   // this needs to happen because the piece should be rendered on the screen first *then* removal of transform will activate the transition
   setTimeout(() => {
-    piece.style.removeProperty('transform');
-  }, 0)
+    piece.style.removeProperty("transform");
+  }, 0);
 }
 
 /** endGame: announce game end */
